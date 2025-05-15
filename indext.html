@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧感測：結合 AI 的環境監控系統設計平台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>智慧感測：結合 AI 的環境監控系統設計平台</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showContent('introduction')">緒論</a>
+        <a href="#" onclick="showContent('literature')">文獻探討</a>
+        <a href="#" onclick="showContent('design')">系統設計與架構</a>
+        <a href="#" onclick="showContent('implementation')">系統實作</a>
+        <a href="#" onclick="showContent('results')">測試與結果</a>
+        <a href="#" onclick="showContent('conclusion')">結論與未來展望</a>
+    </nav>
+    <section>
+        <div id="introduction" class="content-section">
+            <h2>第一章 緒論</h2>
+            <h3>1.1 研究背景與動機</h3>
+            <p>隨著全球對環境品質日益重視，智慧型環境監控系統的需求逐年上升。傳統監控系統往往依賴人工紀錄與分析，效率低且反應不及時。本專題旨在結合物聯網 (IoT) 與人工智慧 (AI) 技術，設計一套能即時感測並智慧判斷環境異常的系統，以提升監控效率與反應能力，進一步應用於校園、工廠或智慧城市等場域。</p>
+            <h3>1.2 研究目的</h3>
+            <ul>
+                <li>建立一套以感測器為基礎的環境監控系統。</li>
+                <li>利用 AI 模型分析感測數據並辨識異常。</li>
+                <li>透過前端介面即時顯示監控資訊並發送警報。</li>
+            </ul>
+        </div>
+        <div id="literature" class="content-section hidden">
+            <h2>第二章 文獻探討</h2>
+            <h3>2.1 環境感測技術概述</h3>
+            <p>簡述常見的環境感測器，如溫濕度感測器、空氣品質模組 (如 PM2.5、CO₂ 感測器) 等。</p>
+            <h3>2.2 人工智慧於環境監控中的應用</h3>
+            <p>探討 AI（特別是機器學習、深度學習）在資料分析與異常偵測的應用實例，例如使用 SVM、決策樹或 CNN 辨識特定環境事件。</p>
+            <h3>2.3 現有相關系統比較</h3>
+            <p>分析市面上現有的智慧環境監控系統，並指出其優缺點，作為本專題設計參考。</p>
+        </div>
+        <div id="design" class="content-section hidden">
+            <h2>第三章 系統設計與架構</h2>
+            <h3>3.1 系統架構圖</h3>
+            <p>展示整體系統架構圖，包括感測層、資料傳輸層、AI 分析層與使用者介面層。</p>
+            <h3>3.2 硬體設計</h3>
+            <p>列出使用的硬體模組，例如 Arduino/Raspberry Pi、DHT22、MQ-135 等。</p>
+            <h3>3.3 軟體設計</h3>
+            <p>使用 Python 作為資料蒐集與 AI 模型實作語言，前端以 HTML/JavaScript 展示資訊，後端採 Flask 建構 API。</p>
+            <h3>3.4 AI 模型設計</h3>
+            <p>資料前處理、模型選擇（KNN / SVM 等）、訓練與測試。</p>
+        </div>
+        <div id="implementation" class="content-section hidden">
+            <h2>第四章 系統實作</h2>
+            <h3>4.1 感測資料蒐集</h3>
+            <p>說明如何透過硬體裝置定時蒐集環境數據並儲存至資料庫。</p>
+            <h3>4.2 AI 模型訓練流程</h3>
+            <p>提供訓練過程截圖、資料集簡介、模型訓練後的準確率等。</p>
+            <h3>4.3 前端介面展示</h3>
+            <p>提供系統介面畫面，例如圖表、儀表板、警報通知等功能展示。</p>
+        </div>
+        <div id="results" class="content-section hidden">
+            <h2>第五章 測試與結果</h2>
+            <h3>5.1 功能測試</h3>
+            <p>各項功能是否如預期運作，包括資料蒐集、即時顯示、異常通知等。</p>
+            <h3>5.2 效能評估</h3>
+            <p>AI 模型準確度、系統延遲時間、資料傳輸成功率等。</p>
+            <h3>5.3 實驗環境與測試數據</h3>
+            <p>展示測試過程中的環境設置、測試數據範例、結果分析。</p>
+        </div>
+        <div id="conclusion" class="content-section hidden">
+            <h2>第六章 結論與未來展望</h2>
+            <h3>6.1 結論</h3>
+            <p>本專題成功整合感測技術與 AI，實作出能即時監控環境變化並智慧判斷異常的系統，提升監控效率。</p>
+            <h3>6.2 未來展望</h3>
+            <p>擴充更多類型的感測器（如聲音、光線等），導入深度學習模型如 LSTM 預測環境趨勢。</p>
+        </div>
+    </section>
+</body>
+</html>
